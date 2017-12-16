@@ -1,0 +1,61 @@
+﻿<html>
+
+<head>
+   <title>동명대학교 교수진 자바스크립트 예제</title>
+   <script type = "text/javascript" language = "JavaScript">
+  
+   var xmlDocument = new ActiveXObject( "MSXML.DOMDocument" );
+
+   xmlDocument.load( "JKMeen_resume2.xml" );
+
+   // 뿌리 엘리먼트 가져오기
+   var element = xmlDocument.documentElement;
+   
+   var attributes = element.attributes;
+   var personID = attributes.getNamedItem("ID");
+
+   document.writeln( "<table border=1 width=80% align=center>" );
+
+   // ID 이름 및 속성값을 table cell에 출력
+   document.writeln( "<tr>" );
+   document.writeln( "<td align='center'><strong>" + personID.nodeName + "</td>" );
+   document.writeln( "<td>" + personID.value + "</td>" );
+   document.writeln( "</tr>" );
+
+   // 뿌리 엘리먼트의 모든 자식노드를 탐색
+   for ( i = 0; i < element.childNodes.length; i++ ) {
+      var curNode = element.childNodes.item( i );
+      var value = curNode.firstChild;
+      
+      document.writeln( "<tr>" );
+      // 각 자식노드의 노드이름 출력
+      document.writeln( "<td align='center'><strong>" + curNode.nodeName
+         + "</strong></td>" );
+
+      // 노드값 프린트
+      document.writeln( "<td>" + value.nodeValue + "</td>" );
+      document.writeln( "</tr>" );
+   }
+
+   docuemnt.writeln( "</table>" );
+   
+function show(){
+   window.open("이강혁.html");
+}
+
+</script>
+
+
+</head>
+
+<body>
+
+<center>
+<h1> 동명대학교 교수진</h1>
+</center>
+
+<button onclick="show()" style="width: 95%">resume</button>
+
+</body>
+</html>
+

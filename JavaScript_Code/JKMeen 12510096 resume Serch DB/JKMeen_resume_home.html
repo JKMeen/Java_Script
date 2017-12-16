@@ -1,0 +1,109 @@
+﻿<html>
+
+<head>
+   <title>12510096 조광민 db 검색 과제</title>
+   
+   <!-- Search box -->
+	<style type="text/css">
+		#dbbutton{
+			margin: 0;
+			padding: 5px 15px;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size:14px;
+			outline: none;
+			cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+			color: #ffffff;
+
+			border: solid 1px #0076a3; border-right:0px;
+			background: #0095cd;
+			background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+			background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+			border-radius: 5px 5px;
+		}
+		
+		#newsearch{
+			padding:20px;
+		}
+		.searchtextinput{
+			margin: 0;
+			padding: 5px 15px;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size:14px;
+			border:1px solid #0076a3; border-right:0px;
+			border-top-left-radius: 5px 5px;
+			border-bottom-left-radius: 5px 5px;
+		}
+		.searchbutton {
+			margin: 0;
+			padding: 5px 15px;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size:14px;
+			outline: none;
+			cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+			color: #ffffff;
+			border: solid 1px #0076a3; border-right:0px;
+			background: #0095cd;
+			background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+			background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+			border-top-right-radius: 5px 5px;
+			border-bottom-right-radius: 5px 5px;
+		}
+		.searchbutton:hover {
+			text-decoration: none;
+			background: #007ead;
+			background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+			background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+		}
+		/* Fixes submit button height problem in Firefox */
+		.searchbutton::-moz-focus-inner {
+		  border: 0;
+		}
+		.tfclear{
+			clear:both;
+		}
+	</style>
+
+   <script type = "text/javascript" src="jkm_search.js"></script>
+   <script type = "text/javascript" language = "JavaScript">
+  	
+  	function ShowResume(){
+  		window.open("JKMeen_resume(바로 실행).html");
+  	}
+	
+	function submitBtn() {
+		window.open(""+$('#txtKwd').val()+"");
+	}
+	</script>
+
+</head>
+
+<body style="background-color:#888888">
+
+<center>
+<h1 style="font-family: Arial, Helvetica, sans-serif; color: #cdefff;">§ Resume DB Homework §</h1>
+<h3 style="font-family: Arial, Helvetica, sans-serif; color: #abcdef;">▶ 12510096 조광민 ◀</h3>
+
+<img src="https://3.bp.blogspot.com/-pHKq9z4joyw/V_0gcgGpNAI/AAAAAAAAABA/zGuCQ7YDTjs4Qhy89z-ZDFJdjAPgrcT8wCLcB/s200/12510096.jpg" alt="">
+
+<br><br>
+
+<button id="dbbutton" onclick="ShowResume()">Show All Resume</button>
+
+<br><br>
+
+<div id="tfheader">
+	<form id="newsearch" method="get">
+		<p style="font-family: Arial, Helvetica, sans-serif; color: #cdefff;">※Search Resume※</p>
+		<input type="text" id="searchkey" class="searchtextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="searchbutton" onclick="search(searchkey.value)">
+		<p style="font-size:16; font-family: Arial, Helvetica, sans-serif; color: #ffffff;">ex) 여러개 검색 : 2012 입력 / 한개 검색 : 조광민 입력</p>
+	</form>
+<div class="tfclear"></div>
+</div>
+
+</center>
+</body>
+</html>

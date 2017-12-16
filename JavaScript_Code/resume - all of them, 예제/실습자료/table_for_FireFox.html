@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<script src="loadxmldoc.js"></script>
+
+<script>
+var xmlDoc=loadXMLDoc("faculty.xml");
+var pvalue1 = xmlDoc.getElementsByTagName("NAME")[0].nodeName;
+var pvalue2 = xmlDoc.getElementsByTagName("TITLE")[0].nodeName;
+var cvalue1 = xmlDoc.getElementsByTagName("NAME")[0].childNodes[0].nodeValue;
+var cvalue2 = xmlDoc.getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
+
+function myFunction()
+{
+document.writeln("<html><body>");
+document.writeln("<table border=1 width=80% align=center>" );
+document.writeln("<tr>");
+document.writeln("<td align='center'>" + pvalue1 + "</td>");
+document.writeln("<td align='center'>" + pvalue2 + "</td>");
+document.writeln("</tr>");
+document.writeln("<tr>");
+document.writeln("<td align='center'>" + cvalue1 + "</td>");
+document.writeln("<td align='center'>" + cvalue2 + "</td>");
+document.writeln("</tr>");
+document.writeln("</table>");
+document.writeln("</body></html>");
+}
+</script>
+
+</head>
+
+
+<body>
+<img src="javascript.bmp" alt="">
+
+<br>
+
+<button onclick="myFunction()">Try it</button>
+<br>
+
+
+
+</body>
+</html>

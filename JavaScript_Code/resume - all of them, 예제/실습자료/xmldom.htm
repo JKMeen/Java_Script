@@ -1,0 +1,42 @@
+<html>
+<head>
+   <title>Human Resources DOM Example</title>
+</head>
+<body>
+<script type = "text/javascript" language = "JavaScript">
+   var xmlDocument = new ActiveXObject("Microsoft.XMLDOM");
+   xmlDocument.load("human.xml");
+
+   // get the root element
+   var element = xmlDocument.documentElement;
+   
+   document.writeln( "<table border=1 width=80% align=center>" );
+   document.writeln( "<tr>" );
+   // traverse all child nodes of root element
+   for ( i = 0; i < element.childNodes.length; i++ ) {
+      var curNode = element.childNodes.item( i );
+      
+      // print node name of each child element
+      document.writeln( "<td align='center'><strong>" + curNode.nodeName
+         + "</strong></td>" );
+   }
+
+   document.writeln( "<tr>" );
+
+   for ( i = 0; i < element.childNodes.length; i++ ) {
+      var curNode = element.childNodes.item( i );
+      var value = curNode.firstChild;
+      // print node value of each child element
+      document.writeln( "<td>" + value.nodeValue + "</td>" );
+   }
+
+   document.writeln( "</tr>" );
+
+   docuemnt.writeln( "</table>" );
+
+</script>
+
+</body>
+</html>
+
+
